@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --color-citef-navy: #002855;
+  --color-citef-navy-dark: #00142d;
+  --color-citef-navy-deep: #000d1e;
+  --color-citef-red: #A81124;
+  --color-ferrari-red: #E10600;
+  --color-citef-gold: #d97706;
+}
+
+:root {
+  --primary: #002855;
+  --primary-deep: #000e21;
+  --secondary: #E10600;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000d1e;
+  color: #ffffff;
+}
+
+body {
+  background-color: #000d1e;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Filosofía Zero-Radius estricta */
+.zero-radius,
+.zero-radius * {
+  border-radius: 0px !important;
+}
+
+/* Transiciones cinematográficas */
+.ease-luxury {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover en imágenes editoriales con zoom lento */
+.editorial-img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .editorial-img {
+  transform: scale(1.05);
+}
+
+/* Botón Circular CTA característico */
+.cta-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: transparent;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.group:hover .cta-circle {
+  transform: scale(1.1);
+  background-color: #E10600;
+  color: #ffffff;
+  border-color: #E10600;
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+}
+
+.group:hover .cta-circle svg {
+  transform: translateX(4px);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Enlaces con subrayado animado desde la izquierda */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+}
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1.5px;
+  background-color: #E10600;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.editorial-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Barra de progreso de video / slide */
+@keyframes progressAnim {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.animate-progress {
+  animation: progressAnim 7s linear infinite;
+}
+
+/* Scrollbar invisible */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
